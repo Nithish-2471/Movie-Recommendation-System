@@ -1084,6 +1084,7 @@ body.with-bg {
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-top: 70px;
   margin-bottom: 32px;
 }
 .back-to-recs-btn {
