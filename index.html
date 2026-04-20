@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <title>MOVIE SHERIFF</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="with-bg">
+    <div class="side-progress">
+      <div class="step active">
+        <div class="dot"></div>
+        <span>Account</span>
+      </div>
+      <div class="line"></div>
+      <div class="step">
+        <div class="dot"></div>
+        <span>Preferences</span>
+      </div>
+    </div>
+
+    <section class="form">
+      <div class="form-container">
+        <h1>Welcome back.</h1>
+        <p>Your shelves have been waiting.</p>
+        <form id="loginForm" class="form-content">
+          <label>Username</label>
+          <input type="text" id="name" required autofocus />
+          <label>Password</label>
+          <input type="password" id="password" required />
+          <input type="submit" value="Continue" class="submit" />
+        </form>
+      </div>
+    </section>
+
+    <section class="genre">
+      <div class="genre-container">
+        <div class="content">
+          <h1>Choose Your Taste</h1>
+          <p>Select genres to personalize your experience</p>
+        </div>
+        <div class="stack">
+          <div
+            class="card"
+            data-genre="Action & Adventure"
+            style="
+              background-image: url(assets/images/action.jpg);
+              margin-top: 15px;
+            "
+          >
+            <span>Action & Adventure</span>
+          </div>
+          <div
+            class="card"
+            data-genre="Sci-Fi"
+            style="
+              background-image: url(assets/images/sci-fi.jpg);
+              margin-bottom: 20px;
+            "
+          >
+            <span>Sci-Fi</span>
+          </div>
+          <div
+            class="card"
+            data-genre="Drama"
+            style="
+              background-image: url(assets/images/drama.jpg);
+              margin-top: 5px;
+            "
+          >
+            <span>Drama</span>
+          </div>
+          <div
+            class="card"
+            data-genre="Thriller"
+            style="
+              background-image: url(assets/images/thriller.jpg);
+              margin-bottom: 10px;
+            "
+          >
+            <span>Thriller</span>
+          </div>
+          <div
+            class="card"
+            data-genre="Horror"
+            style="background-image: url(assets/images/horror.jpg)"
+          >
+            <span>Horror</span>
+          </div>
+          <div
+            class="card"
+            data-genre="Crime"
+            style="
+              background-image: url(assets/images/crime.jpg);
+              margin-top: 20px;
+            "
+          >
+            <span>Crime</span>
+          </div>
+          <div
+            class="card"
+            data-genre="Fantasy"
+            style="
+              background-image: url(assets/images/fantasy.jpg);
+              margin-bottom: 5px;
+            "
+          >
+            <span>Fantasy</span>
+          </div>
+        </div>
+        <button class="continue-btn" disabled>Continue</button>
+      </div>
+    </section>
+
+    <section class="movies">
+      <!-- ARCHIVE HEADER (Marquee / Clapperboard style) -->
+      <header class="archive-header">
+        <div class="header-top">
+          <div class="archive-logo">
+            <span class="logo-text">SHERIFF ARCHIVE</span>
+          </div>
+          <div class="header-actions">
+            <div class="search-wrapper">
+              <i class="fas fa-search search-icon"></i>
+              <input
+                type="text"
+                id="searchBar"
+                placeholder="Search film or cast..."
+              />
+            </div>
+            <button class="profile-btn" id="profileBtn">
+              <i class="fas fa-user"></i>
+              <span id="usernameDisplay"></span>
+            </button>
+            <button class="logout-btn" id="logoutBtn">
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Genre Pills as "film strip labels" -->
+        <div id="genrePills" class="genre-pill-strip"></div>
+      </header>
+
+      <!-- HERO – Featured Film as a "Now Screening" Marquee -->
+      <section id="hero" class="hero-marquee">
+        <!-- Dynamically filled by JS -->
+      </section>
+
+      <!-- MAIN CONTENT: Rows of "Film Reels" -->
+      <div id="archiveContent" class="archive-content">
+        <!-- Rows will be injected here by render.js -->
+      </div>
+    </section>
+
+    <div id="movieModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalContent"></div>
+        <button id="closeMovieBtn">Close</button>
+      </div>
+    </div>
+
+    <div id="profileModal" class="modal">
+      <div class="modal-content profile-modal">
+        <span class="close-profile">&times;</span>
+        <div id="profileContent"></div>
+      </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
